@@ -1,16 +1,31 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
+import Info from './Info';
+import Ratings from './Ratings';
+
+const styles = StyleSheet.create({
+  itemContainer: {
+    display: 'flex',
+    margin: 15,
+  },
+});
+
+
 
 const RepositoryItem = ( { item }) => {
     return (
-      <View>
-        <Text>Fullname : {item.fullName}</Text>
-        <Text>Description : {item.description}</Text>
-        <Text>Language: {item.language}</Text>
-        <Text>Stars: {item.stargazersCount}</Text>
-        <Text>Forks: {item.forksCount}</Text>
-        <Text>Reviews: {item.reviewCount}</Text>
-        <Text>Rating: {item.ratingAverage}</Text>
+      <View style={styles.itemContainer}>
+        <Info 
+          fullName={item.fullName} 
+          description={item.description} 
+          language={item.language}
+          avatar={item.ownerAvatarUrl} 
+        />
+        <Ratings 
+          stars={item.stargazersCount} 
+          forks={item.forksCount}
+          reviews={item.reviewCount}
+          rating={item.ratingAverage}/>
       </View>
     );
 };
