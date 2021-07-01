@@ -1,7 +1,7 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Text, ScrollView } from 'react-native';
 import Constants from 'expo-constants';
-import { Text, Pressable } from 'react-native';
+import { Link } from "react-router-native";
 import theme from '../theme';
 
 const styles = StyleSheet.create({
@@ -17,24 +17,17 @@ const styles = StyleSheet.create({
   }
 });
 
-const onPress= () => {
-    console.log("regular");
-};
-
-const onPressOut = () => {
-    console.log("out");
-};
-
-const longPress = () => {
-    window.alert("heyy");
-};
-
 const AppBar = () => {
   return ( 
   <View style={styles.container}>
-      <Pressable onLongPress={longPress} onPressOut={onPressOut} onPress={onPress}>
+    <ScrollView horizontal>
+      <Link to="/">
         <Text style={styles.flexItemA}>Repositories</Text>
-      </Pressable>
+      </Link>
+      <Link to="/signin">
+        <Text style={styles.flexItemA}>Sign in</Text>
+      </Link>
+    </ScrollView>
   </View>
   );
 };
