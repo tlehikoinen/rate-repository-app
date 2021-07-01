@@ -12,7 +12,8 @@ const styles = StyleSheet.create({
     },
     textContainer: {
         paddingLeft: 15,
-        flexDirection: 'column'
+        flexDirection: 'column',
+        flexShrink: 1
     },
     languageTag: {
       color: 'white',
