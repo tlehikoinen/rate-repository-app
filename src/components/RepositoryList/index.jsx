@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React  from 'react';
 import { FlatList, View, StyleSheet } from 'react-native';
 import RepositoryItem from './RepositoryItem';
-import useRepositories from '../hooks/useRepositories';
-import theme from '../theme';
+import useRepositories from '../../hooks/useRepositories';
+import theme from '../../theme';
 
 const styles = StyleSheet.create({
   separator: {
