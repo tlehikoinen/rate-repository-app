@@ -13,3 +13,12 @@ query {
 }
 ${REPOSITORY_LIST_ITEMS}
 `;
+
+export const AUTHORIZED_USER = gql `
+  query {
+    authorizedUser {
+      id
+      username
+    }
+  }
+`;
