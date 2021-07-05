@@ -13,11 +13,10 @@ const styles = StyleSheet.create({
 
 
 const RepositoryItem = ( { item }) => {
-  console.log(item);
     return (
       <View style={styles.itemContainer}>
         <Info 
-          fullName={item.name} 
+          fullName={item.fullName} 
           description={item.description} 
           language={item.language}
           avatar={item.ownerAvatarUrl} 

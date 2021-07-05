@@ -3,7 +3,11 @@ import { View, StyleSheet } from 'react-native';
 import Text from '../Text';
 import theme from '../../theme';
 
-const RatingItem = ({ description, rating }) => {
+export const ratingHandler = (number) => {
+    return (number< 1000) ? number: `${(Math.round(10*number/1000))/10}k`;
+};
+
+const RatingItem = ({ description, rating, testID }) => {
 
     const styles = StyleSheet.create({
         container: {
@@ -11,12 +15,12 @@ const RatingItem = ({ description, rating }) => {
         }
     });
 
-    const ratingToShow = (rating < 1000) ? rating : `${(Math.round(10*rating/1000))/10}k`;
-
+    //const ratingToShow = (rating < 1000) ? rating : `${(Math.round(10*rating/1000))/10}k`;
+    const ratingToShow = ratingHandler(rating);
 
     return (
-        <View style={styles.container}>
-            <Text fontWeight='bold'>
+        <View style={styles.container} >
+            <Text fontWeight='bold' testID={testID}>
                 {ratingToShow}
             </Text>
             <Text color={theme.colors.textDescription}>

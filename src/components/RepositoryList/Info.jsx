@@ -37,9 +37,9 @@ const Info = ({ fullName, description, language, avatar }) => {
               source={{uri:avatar}}
             />
             <View style={styles.textContainer}>
-              <Text fontWeight="bold" fontSize="subheading">{fullName}</Text>
-              <Text color="textDescription">{description}</Text>
-              <Text style={styles.languageTag}>{language}</Text>
+              <Text fontWeight="bold" fontSize="subheading" testID="fullname">{fullName}</Text>
+              <Text color="textDescription" testID="description">{description}</Text>
+              <Text style={styles.languageTag} testID="language">{language}</Text>
             </View>
         </View>
     );

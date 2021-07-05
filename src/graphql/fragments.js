@@ -2,7 +2,7 @@ import { gql } from '@apollo/client';
 
 export const REPOSITORY_LIST_ITEMS = gql `
   fragment RepositoryFields on Repository {
-        name
+        fullName
         description
         language
         ownerAvatarUrl

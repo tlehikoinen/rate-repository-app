@@ -14,10 +14,10 @@ const Ratings = ( {stars, forks, reviews, rating} ) => {
 
     return (
         <View style={styles.container}>
-          <RatingItem description='Stars' rating={stars} />
-          <RatingItem description='Forks' rating={forks} />
-          <RatingItem description='Reviews' rating={reviews} />
-          <RatingItem description='Rating' rating={rating} />
+          <RatingItem description='Stars' rating={stars} testID="stars" />
+          <RatingItem description='Forks' rating={forks} testID="forks" />
+          <RatingItem description='Reviews' rating={reviews} testID="reviews" />
+          <RatingItem description='Rating' rating={rating} testID="rating" />
 
         </View>
     );
