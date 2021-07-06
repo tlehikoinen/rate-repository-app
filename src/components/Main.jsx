@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Route, Switch } from 'react-router-native';
-
 import RepositoryList from './RepositoryList';
+import RepositorySingle from './RepositorySingle';
 import AppBar from './AppBar';
 import SignIn from './SignIn';
 
@@ -21,10 +21,13 @@ const Main = () => {
     <View style={styles.container}>
       <Switch>
         <Route path="/" exact>
-          <RepositoryList />
+          <RepositoryList/>
         </Route>
         <Route path="/signin">
           <SignIn />
+        </Route>
+        <Route path="/:id" >
+          <RepositorySingle /> 
         </Route>
       </Switch>
     </View>

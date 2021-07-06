@@ -15,7 +15,6 @@ const RatingItem = ({ description, rating, testID }) => {
         }
     });
 
-    //const ratingToShow = (rating < 1000) ? rating : `${(Math.round(10*rating/1000))/10}k`;
     const ratingToShow = ratingHandler(rating);
 
     return (
