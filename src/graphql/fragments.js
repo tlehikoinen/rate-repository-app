@@ -13,3 +13,21 @@ export const REPOSITORY_LIST_ITEMS = gql `
         id   
    }
 `;
+export const REPOSITORY_REVIEW_ITEMS = gql `
+fragment RepositoryReviewFields on Repository {
+  reviews {
+    edges {
+      node {
+        id
+        text
+        rating
+        createdAt
+        user {
+          id
+          username
+        }
+      }
+    }
+  }
+}
+`;

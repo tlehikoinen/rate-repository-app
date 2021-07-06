@@ -8,8 +8,6 @@ const SingleViewAdditions = ( {item} ) => {
         Linking.openURL(item.url);
     };
 
-    console.log(item);
-
     return (
         <View>
           <Button title="Open in GitHub" onPress={OpenGithub}  />
