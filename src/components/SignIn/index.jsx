@@ -6,15 +6,29 @@ import SignInForm from './SignInForm';
 import * as yup from 'yup';
 import useSignIn from '../../hooks/useSignIn';
 
-const initialValues = {
+export const initialValues = {
   username: "",
-  password: ""
+  password: "",
 };
 
-const validationSchema = yup.object().shape({
+export const validationSchema = yup.object().shape({
   username: yup.string().required('Username is required'),
   password: yup.string().required('Password is required')
   });
+
+export const SignInContainer = ({ onSubmit, validationSchema, initialValues }) => {
+  return (
+    <View>
+      <Formik
+        initialValues={initialValues}
+        onSubmit={onSubmit}
+        validationSchema={validationSchema}
+      >
+        {({ handleSubmit }) => <SignInForm onSubmit={handleSubmit} />}
+      </Formik>
+    </View>
+  );
+};
 
 const SignIn = () => {
   const [signIn] = useSignIn();
@@ -33,16 +47,10 @@ const SignIn = () => {
     };
 
   return (
-    <View>
-      <Formik 
-        initialValues={initialValues} 
-        onSubmit={onSubmit}
-        validationSchema={validationSchema}
-      >
-        {({handleSubmit}) => <SignInForm onSubmit={handleSubmit} />}
-      </Formik>
-    </View>
+    <SignInContainer onSubmit={onSubmit} validationSchema={validationSchema} initialValues={initialValues} />
   );
 };
+
+
 
 export default SignIn;

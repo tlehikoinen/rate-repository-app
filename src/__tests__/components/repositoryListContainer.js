@@ -85,11 +85,6 @@ describe('RepositoryList', () => {
       const repositoryReviewCounts = getAllByTestId("reviews");
       expect(repositoryReviewCounts[0]).toHaveTextContent(ratingHandler(firstRepository.reviewCount));
       expect(repositoryReviewCounts[1]).toHaveTextContent(ratingHandler(secondRepository.reviewCount));
-
-
-
-
-
     });
   });
 });
