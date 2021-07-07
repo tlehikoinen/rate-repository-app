@@ -9,7 +9,7 @@ const useRepository = (id) => {
         fetchPolicy: 'cache-and-network',
     });
     const repository = data?.repository;
-
+    
     return { repository, error, loading };
 };
 
