@@ -16,7 +16,7 @@ const theme = {
       android: 'Roboto',
       ios: 'Arial',
       main: 'System',
-      default: 'System'
+      default: 'System',
     },
     fontWeights: {
       normal: '400',
