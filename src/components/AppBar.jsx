@@ -6,6 +6,7 @@ import theme from '../theme';
 import { useApolloClient, useQuery } from '@apollo/client';
 import { AUTHORIZED_USER } from '../graphql/queries';
 import useAuthStorage from '../hooks/useAuthStorage';
+import { useHistory } from 'react-router';
 
 
 
@@ -27,10 +28,12 @@ const AppBar = () => {
   const apolloClient = useApolloClient();
   const { data }  = useQuery(AUTHORIZED_USER);
   const authStorage = useAuthStorage();
+  const history = useHistory();
 
   const logout = async () => {
     await authStorage.removeAccessToken();
     apolloClient.resetStore();
+    history.push("signin");
   };
 
   return ( 
@@ -48,9 +51,15 @@ const AppBar = () => {
           <Text style={styles.flexItemA}>Logout</Text>
         </Link>  
       </> : 
-      <Link to="/signin">
-        <Text style={styles.flexItemA}>Sign in</Text>
-      </Link> }
+      <>
+        <Link to="/signin">
+          <Text style={styles.flexItemA}>Sign in</Text>
+        </Link> 
+        <Link to="/signup">
+          <Text style={styles.flexItemA}>Sign Up</Text>
+        </Link>
+      </>
+      }
     </ScrollView>
   </View>
   );
