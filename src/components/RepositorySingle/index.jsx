@@ -3,19 +3,10 @@ import { useParams } from 'react-router';
 import useRepository from '../../hooks/useRepository';
 import RepositoryItem from '../RepositoryList/RepositoryItem';
 import ReviewItem from './ReviewItem';
-import theme from '../../theme';
-import { FlatList, View, StyleSheet } from 'react-native';
-
-const styles = StyleSheet.create({
-    separator: {
-      height: 10,
-      backgroundColor: theme.colors.itemSeparator
-    }
-  });
+import { FlatList, View } from 'react-native';
+import ItemSeparator from '../ItemSeparator';
 
 const RenderReview = ( { review }) => <ReviewItem review={review} />;
-  
-const ItemSeparator = () => <View style={styles.separator} />;
 
 const RepositoryInfo = ( { repository }) => (
     <View>

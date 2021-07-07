@@ -47,6 +47,9 @@ const AppBar = () => {
         <Link to="/createreview">
           <Text style={styles.flexItemA}>Create a review</Text>
         </Link>
+        <Link to="/myreviews">
+          <Text style={styles.flexItemA}>My reviews</Text>
+        </Link>
         <Link onPress={logout}>
           <Text style={styles.flexItemA}>Logout</Text>
         </Link>  

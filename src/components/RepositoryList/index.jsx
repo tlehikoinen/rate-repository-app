@@ -1,24 +1,10 @@
 import React, { useState }  from 'react';
-import { FlatList, View, StyleSheet, } from 'react-native';
+import { FlatList } from 'react-native';
 import RepositoryItem from './RepositoryItem';
 import useRepositories from '../../hooks/useRepositories';
-import theme from '../../theme';
 import TextFilterComponent from './TextFilterComponent';
 import DropdownFilterComponent from './DropdownFilterComponent';
-
-
-const styles = StyleSheet.create({
-  separator: {
-    height: 10,
-    backgroundColor: theme.colors.itemSeparator
-  }
-});
-
-const ItemSeparator = () => <View style={styles.separator} />;
-
-
-
-
+import ItemSeparator from '../ItemSeparator';
 
 const RenderItem = ({item}) => {
     return <RepositoryItem item={item} />;
