@@ -40,9 +40,14 @@ const AppBar = () => {
         <Text style={styles.flexItemA}>Repositories</Text>
       </Link>
       {data?.authorizedUser !== null ? 
-      <Link onPress={logout}>
-        <Text style={styles.flexItemA}>Logout</Text>
-      </Link>  : 
+      <>
+        <Link to="/createreview">
+          <Text style={styles.flexItemA}>Create a review</Text>
+        </Link>
+        <Link onPress={logout}>
+          <Text style={styles.flexItemA}>Logout</Text>
+        </Link>  
+      </> : 
       <Link to="/signin">
         <Text style={styles.flexItemA}>Sign in</Text>
       </Link> }
