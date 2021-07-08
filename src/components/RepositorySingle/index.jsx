@@ -17,6 +17,10 @@ const RepositoryInfo = ( { repository }) => (
 
 const RepositorySingle = () => {
 
+  const onEndReach = () => {
+    console.log('You have reached the end of the list');
+  };
+
     const params = useParams();
     const { repository, loading } = useRepository(params.id);
 
@@ -31,6 +35,8 @@ const RepositorySingle = () => {
         data={reviews}
         renderItem={({item}) => <RenderReview review={item} />}
         ItemSeparatorComponent={ItemSeparator}
+        onEndReached={onEndReach}
+        onEndReachedThreshold={0.5}
         keyExtractor={(item, index) => index.toString()}
         ListHeaderComponent= {() => <RepositoryInfo repository={repository} />}
       />

@@ -19,7 +19,7 @@ const HeaderComponent = (setFilter, setSortMethod) => {
   );
 };
 
-export const RepositoryListContainer = ( { repositories, setFilter, setSortMethod }) => {
+export const RepositoryListContainer = ( { repositories, onEndReach, setFilter, setSortMethod }) => {
   const repositoryNodes = repositories
     ? repositories.edges.map(edge => edge.node)
     : [];
@@ -30,6 +30,8 @@ export const RepositoryListContainer = ( { repositories, setFilter, setSortMetho
         ItemSeparatorComponent={ItemSeparator}
         ListFooterComponent={ItemSeparator}
         ListHeaderComponent={HeaderComponent(setFilter, setSortMethod)}
+        onEndReached={onEndReach}
+        onEndReachedThreshold={0.5}
         renderItem={RenderItem}
         keyExtractor={(item) => item.id}
       />
@@ -42,7 +44,12 @@ const RepositoryList = () => {
   const [filter, setFilter] = useState('');
   const { repositories } = useRepositories(sortMethod, filter);
 
-  return <RepositoryListContainer repositories={repositories} setFilter={setFilter} setSortMethod={setSortMethod} />;
+  const onEndReach = () => {
+    console.log('You have reached the end of the list');
+  };
+
+
+  return <RepositoryListContainer repositories={repositories} onEndReach={onEndReach} setFilter={setFilter} setSortMethod={setSortMethod} />;
 };
 
 export default RepositoryList;
