@@ -18,7 +18,7 @@ const RepositoryInfo = ( { repository }) => (
 const RepositorySingle = () => {
 
   const onEndReach = () => {
-    console.log('You have reached the end of the list');
+    console.log('You have reached the end of the review list');
   };
 
     const params = useParams();

@@ -45,7 +45,7 @@ const RepositoryList = () => {
   const { repositories } = useRepositories(sortMethod, filter);
 
   const onEndReach = () => {
-    console.log('You have reached the end of the list');
+    console.log('You have reached the end of the repository list');
   };
 
 
